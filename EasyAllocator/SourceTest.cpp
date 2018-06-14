@@ -1,7 +1,8 @@
 #include <stdio.h>
-
+#include "stdafx.h"
 
 int main{
 
-	aaaa;
+	int aaaa;
+	return 1;
 }
