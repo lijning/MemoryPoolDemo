@@ -21,12 +21,18 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\EasyAllocator\mempool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EasyAllocator\easyallocator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="EasyAllocator.cpp">
+    <ClCompile Include="NewAllocator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
