@@ -21,14 +21,14 @@ public:
 	const_pointer address(const_reference _Val) const _NOEXCEPT;
 	void deallocate(pointer _Ptr, size_type _Count);
 	_DECLSPEC_ALLOCATOR pointer allocate(size_type _Count) {
-
+		mpool.malloc(_Count);
 	}
 	template<class _Uty> void destroy(_Uty *_Ptr);
 	template<class _Objty,
 		class... _Types>
 		void construct(_Objty *_Ptr, _Types&&... _Args);
 private:
-	static MemPool();
+	static MemPool mpool();
 
 
 };
