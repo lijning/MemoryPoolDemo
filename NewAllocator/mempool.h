@@ -1,6 +1,6 @@
 #pragma once
 
-template<size_t NodeData_sz, unsigned int Block_NodeCount=100>
+template<size_t NodeData_sz, unsigned int Block_NodeCount=768>
 class SubMemPool { // Each MemPool consist of several SubPools.
 private:
 
@@ -60,12 +60,12 @@ class MemPool {
 private:
 	const size_t TSZ;
 	const size_t MAX_CNT;
-	SubMemPool<4 * sizeof(Ty)> mp4;
+	SubMemPool<4 * sizeof(Ty),16> mp4;
 	SubMemPool<1024 * sizeof(Ty)> mp1024;
-	SubMemPool<2048 * sizeof(Ty)> mp2048;
+	SubMemPool<2048 * sizeof(Ty),512> mp2048;
 	SubMemPool<4096 * sizeof(Ty)> mp4096;
-	SubMemPool<6144 * sizeof(Ty),50> mp6144;
-	SubMemPool<8192 * sizeof(Ty),20> mp8192;
+	SubMemPool<6144 * sizeof(Ty)> mp6144;
+	SubMemPool<8192 * sizeof(Ty)> mp8192;
 
 public:
 	MemPool() : TSZ(sizeof(Ty)), MAX_CNT(8192) {}

@@ -12,8 +12,8 @@
 //#include "myallocator.h"
 //#include "y_alloc.h"
 template<class T>
-using MyAllocator =  std::allocator<T>;
-//using MyAllocator = y_alloc<T>;EasyAllocator<T>;//
+using MyAllocator = EasyAllocator<T>;// std::allocator<T>;
+//using MyAllocator = y_alloc<T>;
 //using MyAllocator = y_mp_alloc<T>;
 using Point2D = std::pair<int, int>;
 
@@ -47,7 +47,7 @@ int main()
   for (int i = 0; i < TestSize; i++)
     vecpts[i].resize(smalldis(gen));
 
-  // vector resize
+  // vector resize smalldis(gen) 
   for (int i = 0; i < PickSize; i++)
   {
     int idx = smalldis(gen) - 1;
@@ -81,7 +81,6 @@ int main()
   auto end = std::chrono::high_resolution_clock::now();
   std::chrono::duration<double> elapsed = end - start;
   std::cout << "Elapsed time: " << elapsed.count() << " seconds." << std::endl;
-  char a;
-  std::cin >> a;
+  system("pause");
   return 0;
 }
